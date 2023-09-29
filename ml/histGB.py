@@ -11,23 +11,23 @@ test = []
 y = []
 y_test = []
 
-for file in os.listdir('benigh')[:-2]:
-    with open(f'benigh/{file}') as file_with_features:
+for file in os.listdir('ml/benigh')[:-2]:
+    with open(f'ml/benigh/{file}') as file_with_features:
         train.append(json.load(file_with_features).get("API"))
         y.append(1)
 
-for file in os.listdir('benigh')[:-2]:
-    with open(f'benigh/{file}') as file_with_features:
+for file in os.listdir('ml/benigh')[:-2]:
+    with open(f'ml/benigh/{file}') as file_with_features:
             test.append(json.load(file_with_features).get("API"))
             y_test.append(1)
 
-for file in os.listdir('malware')[:-1]:
-    with open(f'malware/{file}') as file_with_features:
+for file in os.listdir('ml/malware')[:-1]:
+    with open(f'ml/malware/{file}') as file_with_features:
         train.append(json.load(file_with_features).get("API"))
         y.append(-1)
 
-for file in os.listdir('malware')[:-1]:
-    with open(f'malware/{file}') as file_with_features:
+for file in os.listdir('ml/malware')[:-1]:
+    with open(f'ml/malware/{file}') as file_with_features:
             test.append(json.load(file_with_features).get("API"))
             y_test.append(-1)
 
