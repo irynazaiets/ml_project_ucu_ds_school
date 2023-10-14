@@ -1,3 +1,4 @@
+HistGradientBoostingClassifier
 10% test data
 Accuracy: 0.9625
 F1 Score: 0.962962962962963
@@ -11,3 +12,29 @@ F1 Score: 0.9667110519307589
 Precision: 0.952755905511811
 Recall: 0.981081081081081
 AUC: 0.964826254826255
+
+3 labels:
+
+Metrics for HistGradientBoostingClassifier classifier:
+Accuracy: 0.5833333333333334
+F1 Score: 0.5637562869895071
+Precision: 0.5675386090557034
+Recall: 0.5801298082963372
+Metrics for RandomForestClassifier classifier:
+Accuracy: 0.5925925925925926
+F1 Score: 0.4844957730844684
+Precision: 0.5357774509907146
+Recall: 0.5949549207857281
+Metrics for AdaBoostClassifier classifier:
+Accuracy: 0.6101851851851852
+F1 Score: 0.5577616642572797
+Precision: 0.586264462635108
+Recall: 0.6137212148606362
+
+
+Cross-validated accuracy for HistGradientBoostingClassifier: 0.6480555555555555
+Cross-validated f1_macro for HistGradientBoostingClassifier: 0.5400556183641193
+
+#run binary between malware and puas
+multi layer perceptron, deep ml
+think how to speed up things
