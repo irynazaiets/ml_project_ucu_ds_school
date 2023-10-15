@@ -1,40 +1,156 @@
-HistGradientBoostingClassifier
-10% test data
-Accuracy: 0.9625
-F1 Score: 0.962962962962963
-Precision: 0.9590163934426229
-Recall: 0.9669421487603306
-AUC: 0.9624626710188209
+3 classes, train test split:
+    Metrics for HistGradientBoostingClassifier classifier:
+    Accuracy: 0.5833333333333334
+    F1 Score: 0.5637562869895071
+    Precision: 0.5675386090557034
+    Recall: 0.5801298082963372
 
-30% test data
-Accuracy: 0.9652777777777778
-F1 Score: 0.9667110519307589
-Precision: 0.952755905511811
-Recall: 0.981081081081081
-AUC: 0.964826254826255
+    Metrics for RandomForestClassifier classifier:
+    Accuracy: 0.5925925925925926
+    F1 Score: 0.4844957730844684
+    Precision: 0.5357774509907146
+    Recall: 0.5949549207857281
 
-3 labels:
+    Metrics for AdaBoostClassifier classifier:
+    Accuracy: 0.6101851851851852
+    F1 Score: 0.5577616642572797
+    Precision: 0.586264462635108
+    Recall: 0.6137212148606362
 
-Metrics for HistGradientBoostingClassifier classifier:
-Accuracy: 0.5833333333333334
-F1 Score: 0.5637562869895071
-Precision: 0.5675386090557034
-Recall: 0.5801298082963372
-Metrics for RandomForestClassifier classifier:
-Accuracy: 0.5925925925925926
-F1 Score: 0.4844957730844684
-Precision: 0.5357774509907146
-Recall: 0.5949549207857281
-Metrics for AdaBoostClassifier classifier:
-Accuracy: 0.6101851851851852
-F1 Score: 0.5577616642572797
-Precision: 0.586264462635108
-Recall: 0.6137212148606362
+    Metrics for MLP classifier:
+    Accuracy: 0.5879629629629629
+    F1 Score: 0.541545258638401
+    Precision: 0.577290265177797
+    Recall: 0.5912846370047504
+
+    Metrics for SVM classifier:
+    Accuracy: 0.587037037037037
+    F1 Score: 0.4811010621485476
+    Precision: 0.4148886494252874
+    Recall: 0.5916557558931322
+
+3 classes, cross validation
+    Cross validated metrics for HistGradientBoostingClassifier classifier:
+    Accuracy: 0.6475
+    F1 Score: 0.5372799691485343
+    Precision: 0.6381170654982586
+    Recall: 0.6475
+
+    Cross validated metrics for RandomForestClassifier classifier:
+    Accuracy: 0.5930555555555556
+    F1 Score: 0.5179810773541952
+    Precision: 0.5606575874412898
+    Recall: 0.5930555555555556
+
+    Cross validated metrics for AdaBoostClassifier classifier:
+    Accuracy: 0.64
+    F1 Score: 0.6348143970837241
+    Precision: 0.6360854282773695
+    Recall: 0.64
+
+    Cross validated metrics for MLPClassifier classifier:
+    Accuracy: 0.6369444444444444
+    F1 Score: 0.6366674409145537
+    Precision: 0.6374369910491796
+    Recall: 0.6369444444444444
+
+    Cross validated metrics for SVM classifier:
+    Accuracy: 0.5958333333333333
+    F1 Score: 0.582355065744441
+    Precision: 0.5759642223468203
+    Recall: 0.5958333333333333
 
 
-Cross-validated accuracy for HistGradientBoostingClassifier: 0.6480555555555555
-Cross-validated f1_macro for HistGradientBoostingClassifier: 0.5400556183641193
 
-#run binary between malware and puas
-multi layer perceptron, deep ml
-think how to speed up things
+2 classes - Benign and PUAs, cross validation
+    Cross validated metrics for HistGradientBoostingClassifier classifier:
+    Accuracy: 0.9679166666666666
+    F1 Score: 0.9679131850244167
+    Precision: 0.9681198436821536
+    Recall: 0.9679166666666668
+
+    Cross validated metrics for RandomForestClassifier classifier:
+    Accuracy: 0.8979166666666667
+    F1 Score: 0.8973583925486383
+    Precision: 0.9067663776708685
+    Recall: 0.8979166666666667
+
+    Cross validated metrics for AdaBoostClassifier classifier:
+    Accuracy: 0.96375
+    F1 Score: 0.9637492384822667
+    Precision: 0.9637889711566041
+    Recall: 0.96375
+
+    Cross validated metrics for MLPClassifier classifier:
+    Accuracy: 0.9420833333333334
+    F1 Score: 0.9420506462759984
+    Precision: 0.9430830394410723
+    Recall: 0.9420833333333334
+
+    Cross validated metrics for SVM classifier:
+    Accuracy: 0.8925
+    F1 Score: 0.8923743620156586
+    Precision: 0.8943413550495508
+    Recall: 0.8925
+
+2 classes - Malware and PUAs, cross validation
+    Cross validated metrics for HistGradientBoostingClassifier classifier:
+    Accuracy: 0.5
+    F1 Score: 0.3333333333333333
+    Precision: 0.25
+    Recall: 0.5
+
+    Cross validated metrics for RandomForestClassifier classifier:
+    Accuracy: 0.5
+    F1 Score: 0.4959169271095877
+    Precision: 0.5
+    Recall: 0.5
+
+    Cross validated metrics for AdaBoostClassifier classifier:
+    Accuracy: 0.5
+    F1 Score: 0.3333333333333333
+    Precision: 0.25
+    Recall: 0.5
+
+    Cross validated metrics for MLPClassifier classifier:
+    Accuracy: 0.5
+    F1 Score: 0.48586081538190184
+    Precision: 0.5
+    Recall: 0.5
+
+    Cross validated metrics for SVM classifier:
+    Accuracy: 0.5
+    F1 Score: 0.4999777767900796
+    Precision: 0.5
+    Recall: 0.5
+
+2 classes - Malware and Benign, cross validation:
+    Cross validated metrics for HistGradientBoostingClassifier classifier:
+    Accuracy: 0.9679166666666666
+    F1 Score: 0.9679131850244167
+    Precision: 0.9681198436821536
+    Recall: 0.9679166666666668
+
+    Cross validated metrics for RandomForestClassifier classifier:
+    Accuracy: 0.8979166666666667
+    F1 Score: 0.8973583925486383
+    Precision: 0.9067663776708685
+    Recall: 0.8979166666666667
+
+    Cross validated metrics for AdaBoostClassifier classifier:
+    Accuracy: 0.96375
+    F1 Score: 0.9637492384822667
+    Precision: 0.9637889711566041
+    Recall: 0.96375
+
+    Cross validated metrics for MLPClassifier classifier:
+    Accuracy: 0.9420833333333334
+    F1 Score: 0.9420506462759984
+    Precision: 0.9430830394410723
+    Recall: 0.9420833333333334
+
+    Cross validated metrics for SVM classifier:
+    Accuracy: 0.8925
+    F1 Score: 0.8923743620156586
+    Precision: 0.8943413550495508
+    Recall: 0.8925
