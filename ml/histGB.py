@@ -8,6 +8,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn import svm
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score
 
@@ -32,7 +34,7 @@ def get_data_from_folder(folder_name, data_label, data_size_limit):
 
 benign_folder = 'benign'
 malware_folder = 'malware'
-puas_folder = 'malware'
+puas_folder = 'PUAs'
 
 file_process_limit = 1200 # use this variable to control, how many records to process from each file
 
@@ -57,26 +59,32 @@ vec = DictVectorizer()
 X = vec.fit_transform(data).toarray()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
 
-histGradientBoostingClf = HistGradientBoostingClassifier().fit(X_train, y_train)
-randomForrestClf = RandomForestClassifier(max_depth=2, random_state=0).fit(X_train, y_train)
-adaBoostClf = AdaBoostClassifier(random_state=0).fit(X_train, y_train)
-mlpClf = MLPClassifier(random_state=1, max_iter=300).fit(X_train, y_train)
-svmClf = svm.SVC().fit(X_train, y_train)
+# histGradientBoostingClf = HistGradientBoostingClassifier().fit(X_train, y_train)
+# randomForrestClf = RandomForestClassifier(random_state=0).fit(X_train, y_train)
+# adaBoostClf = AdaBoostClassifier(random_state=0).fit(X_train, y_train)
+# mlpClf = MLPClassifier(random_state=1, max_iter=300).fit(X_train, y_train)
+# svmClf = svm.SVC().fit(X_train, y_train)
+# neighClf = KNeighborsClassifier(n_neighbors=3).fit(X_train, y_train)
+# logRegressionClf = LogisticRegression(random_state=0).fit(X_train, y_train)
 
-evaluate_metrics(histGradientBoostingClf,'HistGradientBoosting', X_test, y_test)
-evaluate_metrics(randomForrestClf,'RandomForest', X_test, y_test)
-evaluate_metrics(adaBoostClf,'AdaBoost', X_test, y_test)
-evaluate_metrics(mlpClf,'MLP', X_test, y_test)
-evaluate_metrics(svmClf,'SVM', X_test, y_test)
+# evaluate_metrics(histGradientBoostingClf,'HistGradientBoosting', X_test, y_test)
+# evaluate_metrics(randomForrestClf,'RandomForest', X_test, y_test)
+# evaluate_metrics(adaBoostClf,'AdaBoost', X_test, y_test)
+# evaluate_metrics(mlpClf,'MLP', X_test, y_test)
+# evaluate_metrics(svmClf,'SVM', X_test, y_test)
+# evaluate_metrics(neighClf,'KNN', X_test, y_test)
+# evaluate_metrics(logRegressionClf, 'LogisticRegression', X_test, y_test)
 
 histGradientBoostingClf = HistGradientBoostingClassifier()
 randomForrestClf = RandomForestClassifier(max_depth=2, random_state=0)
 adaBoostClf = AdaBoostClassifier(random_state=0)
 mlpClf = MLPClassifier(random_state=1, max_iter=300)
 svmClf = svm.SVC()
+neighClf = KNeighborsClassifier(n_neighbors=3)
+logRegressionClf = LogisticRegression(random_state=0)
 
-classifiers = [histGradientBoostingClf, randomForrestClf, adaBoostClf, mlpClf, svmClf]
-classifiers_names = ['HistGradientBoosting', 'RandomForest', 'AdaBoost', 'MLP', 'SVM']
+classifiers = [histGradientBoostingClf, randomForrestClf, adaBoostClf, mlpClf, svmClf, neighClf, logRegressionClf]
+classifiers_names = ['HistGradientBoosting', 'RandomForest', 'AdaBoost', 'MLP', 'SVM', 'KNN', 'LogisticRegression']
 
 for clf, clfName in zip(classifiers, classifiers_names):
     y_pred = cross_val_predict(clf, X, y, cv=10)
